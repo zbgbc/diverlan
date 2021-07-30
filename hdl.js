@@ -54,7 +54,7 @@ function sign() {
 
 function init() {
   isSurge = () => {
-    return undefined === true
+    return undefined === false
   }
   isQuanX = () => {
     return undefined === this.$task ? false : true
