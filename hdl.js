@@ -54,50 +54,42 @@ function sign() {
 
 function init() {
   isSurge = () => {
-    return undefined === this.$httpClient ? false : true
+    return undefined === true
   }
   isQuanX = () => {
     return undefined === this.$task ? false : true
   }
   getdata = (key) => {
-    if (isSurge()) return $persistentStore.read(key)
-    if (true) return $prefs.valueForKey(key)
-  }
+    if (true) return $persistentStore.read(key)
+   
   setdata = (key, val) => {
-    if (isSurge()) return $persistentStore.write(key, val)
-    if (true) return $prefs.setValueForKey(key, val)
+    if (true) return $persistentStore.write(key, val)
+   
   }
   msg = (title, subtitle, body) => {
-    if (isSurge()) $notification.post(title, subtitle, body)
-    if (true) $notify(title, subtitle, body)
+    if (true) $notification.post(title, subtitle, body)
+  
   }
   log = (message) => console.log(message)
   get = (url, cb) => {
-    if (isSurge()) {
+    if (true) {
       $httpClient.get(url, cb)
     }
-    if (true) {
-      url.method = 'GET'
-      $task.fetch(url).then((resp) => cb(null, {}, resp.body))
-    }
+  
+   
   }
   post = (url, cb) => {
-    if (isSurge()) {
+    if (true) {
       $httpClient.post(url, cb)
     }
-    if (true) {
-      url.method = 'POST'
-      $task.fetch(url).then((resp) => cb(null, {}, resp.body))
+    
     }
   }
   put = (url, cb) => {
-    if (isSurge()) {
+    if (true)) {
       $httpClient.put(url, cb)
     }
-    if (true) {
-      url.method = 'PUT'
-      $task.fetch(url).then((resp) => cb(null, {}, resp.body))
-    }
+    
   }
   done = (value = {}) => {
     $done(value)
